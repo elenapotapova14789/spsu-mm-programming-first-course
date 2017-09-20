@@ -36,7 +36,7 @@ int check_pyth_triple(int a, int b, int c)
 int check_prime(int a, int b, int c)
 {
 	for (int i = 2; i < get_min(a, b, c); i++)
-		if (a % i && b % i && c % i)
+		if (a % i == 0 && b % i == 0 && c % i == 0)
 			return 0;
 	return 1;
 }

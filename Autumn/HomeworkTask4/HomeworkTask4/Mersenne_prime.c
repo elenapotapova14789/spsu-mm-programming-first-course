@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 int check_prime(int);
 
@@ -18,9 +19,9 @@ int main()
 	return 0;
 }
 
-int check_prime(int a)
+int check_prime(int a) // проверка на простоту
 {
-	for (int i = 2; i < a; i++)
+	for (int i = 2; i <= sqrtf((float)a); i++)
 		if (a % i == 0)
 			return 0;
 	return 1;
