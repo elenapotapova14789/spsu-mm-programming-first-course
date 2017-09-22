@@ -1,0 +1,9 @@
+﻿  task3.c
+c:\users\пк\documents\visual studio 2017\projects\task3\task3\task3.c(15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\пк\documents\visual studio 2017\projects\task3\task3\task3.c(16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\пк\documents\visual studio 2017\projects\task3\task3\task3.c(17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\пк\documents\visual studio 2017\projects\task3\task3\task3.c(24): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\пк\documents\visual studio 2017\projects\task3\task3\task3.c(27): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\пк\documents\visual studio 2017\projects\task3\task3\task3.c(28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  task3.vcxproj -> C:\Users\пк\Documents\Visual Studio 2017\Projects\task3\Debug\task3.exe
+  task3.vcxproj -> C:\Users\пк\Documents\Visual Studio 2017\Projects\task3\Debug\task3.pdb (Partial PDB)

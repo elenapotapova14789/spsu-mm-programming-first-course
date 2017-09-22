@@ -1,9 +1,0 @@
-﻿  HomeworkTask3.cpp
-c:\users\пк\documents\visual studio 2017\projects\homework.task3\homework.task3\homeworktask3.cpp(15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\пк\documents\visual studio 2017\projects\homework.task3\homework.task3\homeworktask3.cpp(16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\пк\documents\visual studio 2017\projects\homework.task3\homework.task3\homeworktask3.cpp(17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\пк\documents\visual studio 2017\projects\homework.task3\homework.task3\homeworktask3.cpp(24): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\пк\documents\visual studio 2017\projects\homework.task3\homework.task3\homeworktask3.cpp(27): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\пк\documents\visual studio 2017\projects\homework.task3\homework.task3\homeworktask3.cpp(28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  Homework.Task3.vcxproj -> C:\Users\пк\Documents\Visual Studio 2017\Projects\Homework.Task3\Debug\Homework.Task3.exe
-  Homework.Task3.vcxproj -> C:\Users\пк\Documents\Visual Studio 2017\Projects\Homework.Task3\Debug\Homework.Task3.pdb (Partial PDB)
