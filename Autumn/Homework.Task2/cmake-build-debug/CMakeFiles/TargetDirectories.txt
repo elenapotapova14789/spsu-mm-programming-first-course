@@ -1,0 +1,3 @@
+C:/Users/kiril/Documents/GitHub/hello-world/Homework.Task2/cmake-build-debug/CMakeFiles/Homework_Task2.dir
+C:/Users/kiril/Documents/GitHub/hello-world/Homework.Task2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/kiril/Documents/GitHub/hello-world/Homework.Task2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

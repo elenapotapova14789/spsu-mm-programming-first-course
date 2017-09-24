@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/kiril/Documents/GitHub/hello-world/Homework.Task3/functions.c
+stdio.h
+-
+
+C:/Users/kiril/Documents/GitHub/hello-world/Homework.Task3/functions.h
+
+C:/Users/kiril/Documents/GitHub/hello-world/Homework.Task3/main.c
+stdio.h
+-
+math.h
+-
+functions.h
+C:/Users/kiril/Documents/GitHub/hello-world/Homework.Task3/functions.h
+
