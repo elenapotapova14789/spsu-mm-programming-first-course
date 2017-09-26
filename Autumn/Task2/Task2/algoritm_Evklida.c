@@ -1,5 +1,3 @@
-#include "stdafx.h"
-
 int NODNumbers(int x, int y)
 {
 	int nominator = 0;
