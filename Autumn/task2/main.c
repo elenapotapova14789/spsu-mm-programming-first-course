@@ -28,6 +28,7 @@ int read_positive()
 /**
  * Checks if provided numbers are Pythagorean triple
  * @return 1 if numbers are Pythagorean triple, else 0
+ * params are long long to avoid integer overflow.
  */
 int isPythagorean(long long x, long long y, long long z)
 {
@@ -40,9 +41,7 @@ int isPythagorean(long long x, long long y, long long z)
     return 0;
 }
 
-/**
- * Calculate GCD using Euclid's algorithm
- */
+/// Calculate gcd using Euclid's algorithm.
 int GCD(int x, int y)
 {
     if (x == 0 || y == 0)
