@@ -1,11 +1,35 @@
 #include <stdio.h>
-#include "functions.h"
+#include <ctype.h>
+
+int read_positive()
+{
+    printf("Please, enter a number: ");
+    while (1)
+    {
+        int input;
+        char after; // Used to ensure that input is integer.
+        int result = scanf("%d%c", &input, &after);
+        if (result == 2 && input > 0 && isspace(after))
+        {
+            if(after != '\n')
+            {
+                while (getchar() != '\n');
+            }
+            return input;
+        }
+        else if (result != 2 || !isspace(after))
+        {
+            while (getchar() != '\n');
+        }
+        printf("Error! Please, enter a valid number: ");
+    }
+}
 
 /**
  * Checks if provided numbers are Pythagorean triple
  * @return 1 if numbers are Pythagorean triple, else 0
  */
-int isPythagorean(unsigned x, unsigned y, unsigned z)
+int isPythagorean(long long x, long long y, long long z)
 {
     if (x * x == y * y + z * z
         || y * y == x * x + z * z
@@ -19,7 +43,7 @@ int isPythagorean(unsigned x, unsigned y, unsigned z)
 /**
  * Calculate GCD using Euclid's algorithm
  */
-unsigned GCD(unsigned x, unsigned y)
+int GCD(int x, int y)
 {
     if (x == 0 || y == 0)
     {
@@ -42,13 +66,13 @@ unsigned GCD(unsigned x, unsigned y)
 int main()
 {
     printf("Checks if entered numbers are Pythagorean triple.\n");
-    unsigned x = read_positive();
-    unsigned y = read_positive();
-    unsigned z = read_positive();
+    int x = read_positive();
+    int y = read_positive();
+    int z = read_positive();
     if (isPythagorean(x, y, z))
     {
         printf("This is a Pythagorean triple.\n");
-        if (GCD(GCD(x, y), GCD(y, z)) == 1)
+        if (GCD(GCD(x, y), z) == 1)
         {
             printf("Numbers are coprime.\n");
         }
