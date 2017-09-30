@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 
-int read_positive()
+int readinput()
 {
     printf("Please, enter a number: ");
     while (1)
@@ -13,22 +13,21 @@ int read_positive()
         {
             if(after != '\n')
             {
-                while (getchar() != '\n');
+                while (getchar() != '\n'); // We need to free the input stream
             }
             return input;
         }
         else if (result != 2 || !isspace(after))
         {
-            while (getchar() != '\n');
+            while (getchar() != '\n'); // // We need to free the input stream
         }
         printf("Error! Please, enter a valid number: ");
     }
 }
 
 /**
- * Checks if provided numbers are Pythagorean triple
- * @return 1 if numbers are Pythagorean triple, else 0
- * params are long long to avoid integer overflow.
+ * Checks if provided numbers are Pythagorean triple.
+ * Params are long long to avoid integer overflow.
  */
 int isPythagorean(long long x, long long y, long long z)
 {
@@ -65,9 +64,9 @@ int GCD(int x, int y)
 int main()
 {
     printf("Checks if entered numbers are Pythagorean triple.\n");
-    int x = read_positive();
-    int y = read_positive();
-    int z = read_positive();
+    int x = readinput();
+    int y = readinput();
+    int z = readinput();
     if (isPythagorean(x, y, z))
     {
         printf("This is a Pythagorean triple.\n");
