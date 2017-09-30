@@ -19,7 +19,7 @@ int readinput()
         }
         else if (result != 2 || !isspace(after))
         {
-            while (getchar() != '\n'); // // We need to free the input stream
+            while (getchar() != '\n'); // We need to free the input stream
         }
         printf("Error! Please, enter a valid number: ");
     }
