@@ -1,6 +1,24 @@
 #include <stdio.h>
 #include <math.h>
-#include "functions.h"
+
+
+double readinput()
+{
+    printf("Please, enter a number: ");
+    while (1)
+    {
+        double x;
+        int result = scanf("%lf", &x);
+        if (result == 1 && x > 0) {
+            return x;
+        }
+        else
+        {
+            while (getchar() != '\n'); // We need to free the input stream
+        }
+        printf("Error! Please, enter a valid number: ");
+    }
+}
 
 /**
  * Determines angle using cosine theorem.
@@ -42,12 +60,12 @@ void stats(double a, double b, double c)
 int main()
 {
     printf("Checks input values can form a triangle.\n");
-    double a = read_double_positive();
-    double b = read_double_positive();
-    double c = read_double_positive();
+    double a = readinput();
+    double b = readinput();
+    double c = readinput();
     if (a + b > c &&
-            a + c > b &&
-            b + c > a)
+        a + c > b &&
+        b + c > a)
     {
         printf("The values can be lengths of triangle sides.\n");
         printf("Angles:\n");
