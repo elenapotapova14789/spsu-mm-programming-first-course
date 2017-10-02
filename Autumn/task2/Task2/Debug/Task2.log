@@ -1,9 +1,0 @@
-﻿  Task2.c
-c:\users\пк\documents\software engineering\spsu-mm-programming-first-course\autumn\task2\task2\task2.c(67): warning C4013: 'isspace' undefined; assuming extern returning int
-c:\users\пк\documents\software engineering\spsu-mm-programming-first-course\autumn\task2\task2\task2.c(67): warning C4473: 'scanf_s' : not enough arguments passed for format string
-  c:\users\пк\documents\software engineering\spsu-mm-programming-first-course\autumn\task2\task2\task2.c(67): note: placeholders and their parameters expect 3 variadic arguments, but 2 were provided
-  c:\users\пк\documents\software engineering\spsu-mm-programming-first-course\autumn\task2\task2\task2.c(67): note: the missing variadic argument 3 is required by format string '%c'
-  c:\users\пк\documents\software engineering\spsu-mm-programming-first-course\autumn\task2\task2\task2.c(67): note: this argument is used as a buffer size
-c:\users\пк\documents\software engineering\spsu-mm-programming-first-course\autumn\task2\task2\task2.c(80): warning C4716: 'readNumber': must return a value
-  Task2.vcxproj -> C:\Users\пк\Documents\Software Engineering\spsu-mm-programming-first-course\Autumn\task2\Debug\Task2.exe
-  Task2.vcxproj -> C:\Users\пк\Documents\Software Engineering\spsu-mm-programming-first-course\Autumn\task2\Debug\Task2.pdb (Partial PDB)
