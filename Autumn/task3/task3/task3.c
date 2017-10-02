@@ -10,11 +10,16 @@ int triangle(float x, float y, float z)
 	return ((x + y > z) && (x + z > y) && (z + y > x));
 }
 
+float calculateAngle(float a, float b, float c)
+{
+	return acos((pow(a, 2) + pow(b, 2) - pow(c, 2)) / (2 * a * b)) * 180.0 / 3.14159;
+}
+
 void angles(float firstSide, float secondSide, float thirdSide, float *firstAngle, float *secondAngle, float *thirdAngle)
 {
-	*firstAngle = acos((pow(secondSide, 2) + pow(thirdSide, 2) - pow(firstSide, 2)) / (2 * secondSide * thirdSide)) * 180.0 / 3.14159;
-	*secondAngle = acos((pow(firstSide, 2) + pow(thirdSide, 2) - pow(secondSide, 2)) / (2 * firstSide * thirdSide)) * 180.0 / 3.14159;
-	*thirdAngle = acos((pow(secondSide, 2) + pow(firstSide, 2) - pow(thirdSide, 2)) / (2 * secondSide * firstSide)) * 180.0 / 3.14159;
+	*firstAngle = calculateAngle(secondSide, thirdSide, firstSide);
+	*secondAngle = calculateAngle(firstSide, thirdSide, secondSide);
+	*thirdAngle = calculateAngle(firstSide, secondSide, thirdSide);
 }
 
 void minutesSeconds(float number, int *degrees, int *minutes, int *seconds)
@@ -28,6 +33,29 @@ void minutesSeconds(float number, int *degrees, int *minutes, int *seconds)
 	*seconds = afterPoint * 60;
 }
 
+int readNumber(char name, int *value)
+{
+	int input = 0;
+	while (!input)
+	{
+		printf("%c", name);
+		printf(" = ");
+		char nextSymbol = '0';
+		if ((scanf_s("%f%c", &*value, &nextSymbol) == 2) && (*value > 0) && (isspace(nextSymbol)))
+		{
+			input = 1;
+		}
+		else
+		{
+			if (nextSymbol != '\n')
+			{
+				while (getchar() != '\n');
+			}
+			printf("You entered an incorrect expression. Please, enter natural number\n");
+		}
+	}
+}
+
 void printResult(int degrees, int minutes, int seconds)
 {
 	printf("%d", degrees);
@@ -39,15 +67,12 @@ void printResult(int degrees, int minutes, int seconds)
 int main()
 {
 	printf("enter 3 numbers\n");
-	printf("x = ");
 	float x = 0;
-	scanf_s("%f", &x);
-	printf("y = ");
+	readNumber('x', &x);
 	float y = 0;
-	scanf_s("%f", &y);
-	printf("z = ");
+	readNumber('y', &y);
 	float z = 0;
-	scanf_s("%f", &z);
+	readNumber('z', &z);
 
 	if (triangle(x, y, z))
 	{

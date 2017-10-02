@@ -1,9 +1,17 @@
 ﻿  task3.c
-c:\users\пк\documents\visual studio 2017\projects\task3\task3\task3.c(15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\пк\documents\visual studio 2017\projects\task3\task3\task3.c(16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\пк\documents\visual studio 2017\projects\task3\task3\task3.c(17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\пк\documents\visual studio 2017\projects\task3\task3\task3.c(24): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\пк\documents\visual studio 2017\projects\task3\task3\task3.c(27): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\пк\documents\visual studio 2017\projects\task3\task3\task3.c(28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  task3.vcxproj -> C:\Users\пк\Documents\Visual Studio 2017\Projects\task3\Debug\task3.exe
-  task3.vcxproj -> C:\Users\пк\Documents\Visual Studio 2017\Projects\task3\Debug\task3.pdb (Partial PDB)
+c:\users\пк\documents\software engineering\spsu-mm-programming-first-course\autumn\task3\task3\task3.c(15): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\пк\documents\software engineering\spsu-mm-programming-first-course\autumn\task3\task3\task3.c(29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\пк\documents\software engineering\spsu-mm-programming-first-course\autumn\task3\task3\task3.c(32): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\пк\documents\software engineering\spsu-mm-programming-first-course\autumn\task3\task3\task3.c(33): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\пк\documents\software engineering\spsu-mm-programming-first-course\autumn\task3\task3\task3.c(44): warning C4013: 'isspace' undefined; assuming extern returning int
+c:\users\пк\documents\software engineering\spsu-mm-programming-first-course\autumn\task3\task3\task3.c(44): warning C4477: 'scanf_s' : format string '%f' requires an argument of type 'float *', but variadic argument 1 has type 'int *'
+c:\users\пк\documents\software engineering\spsu-mm-programming-first-course\autumn\task3\task3\task3.c(44): warning C4473: 'scanf_s' : not enough arguments passed for format string
+  c:\users\пк\documents\software engineering\spsu-mm-programming-first-course\autumn\task3\task3\task3.c(44): note: placeholders and their parameters expect 3 variadic arguments, but 2 were provided
+  c:\users\пк\documents\software engineering\spsu-mm-programming-first-course\autumn\task3\task3\task3.c(44): note: the missing variadic argument 3 is required by format string '%c'
+  c:\users\пк\documents\software engineering\spsu-mm-programming-first-course\autumn\task3\task3\task3.c(44): note: this argument is used as a buffer size
+c:\users\пк\documents\software engineering\spsu-mm-programming-first-course\autumn\task3\task3\task3.c(71): warning C4133: 'function': incompatible types - from 'float *' to 'int *'
+c:\users\пк\documents\software engineering\spsu-mm-programming-first-course\autumn\task3\task3\task3.c(73): warning C4133: 'function': incompatible types - from 'float *' to 'int *'
+c:\users\пк\documents\software engineering\spsu-mm-programming-first-course\autumn\task3\task3\task3.c(75): warning C4133: 'function': incompatible types - from 'float *' to 'int *'
+c:\users\пк\documents\software engineering\spsu-mm-programming-first-course\autumn\task3\task3\task3.c(57): warning C4716: 'readNumber': must return a value
+  task3.vcxproj -> C:\Users\пк\Documents\Software Engineering\spsu-mm-programming-first-course\Autumn\task3\Debug\task3.exe
+  task3.vcxproj -> C:\Users\пк\Documents\Software Engineering\spsu-mm-programming-first-course\Autumn\task3\Debug\task3.pdb (Partial PDB)
