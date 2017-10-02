@@ -1,4 +1,8 @@
-﻿  stdafx.cpp
-  Task2.c
-  Task2.vcxproj -> C:\Users\пк\Documents\Visual Studio 2017\Projects\Task2\Debug\Task2.exe
-  Task2.vcxproj -> C:\Users\пк\Documents\Visual Studio 2017\Projects\Task2\Debug\Task2.pdb (Partial PDB)
+﻿  Task2.c
+c:\users\пк\documents\software engineering\spsu-mm-programming-first-course\autumn\task2\task2\task2.c(69): warning C4473: 'scanf_s' : not enough arguments passed for format string
+  c:\users\пк\documents\software engineering\spsu-mm-programming-first-course\autumn\task2\task2\task2.c(69): note: placeholders and their parameters expect 3 variadic arguments, but 2 were provided
+  c:\users\пк\documents\software engineering\spsu-mm-programming-first-course\autumn\task2\task2\task2.c(69): note: the missing variadic argument 3 is required by format string '%c'
+  c:\users\пк\documents\software engineering\spsu-mm-programming-first-course\autumn\task2\task2\task2.c(69): note: this argument is used as a buffer size
+c:\users\пк\documents\software engineering\spsu-mm-programming-first-course\autumn\task2\task2\task2.c(82): warning C4716: 'readNumber': must return a value
+  Task2.vcxproj -> C:\Users\пк\Documents\Software Engineering\spsu-mm-programming-first-course\Autumn\task2\Debug\Task2.exe
+  Task2.vcxproj -> C:\Users\пк\Documents\Software Engineering\spsu-mm-programming-first-course\Autumn\task2\Debug\Task2.pdb (Partial PDB)

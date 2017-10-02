@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include < math.h > 
+#include <ctype.h>
 
 
 int pythagoreanTriple(int x, int y, int z)
@@ -35,13 +36,17 @@ int relativePrime(int x, int y, int z)
 	}
 
 	int i = 2;
-	while (i <= x / 2)
+	while (i <= sqrt(x))
 	{
 		if ((x % i == 0) && (y % i == 0) && (z % i == 0))
 		{
 			return 0;
 		}
 		i++;
+	}
+	if ((y % x == 0) && (z % x == 0))
+	{
+		return 0;
 	}
 
 	return 1;
@@ -52,18 +57,39 @@ int primitivePythagoreanTriple(int x, int y, int z)
 	return relativePrime(x, y, z);
 }
 
+int readNumber(char name, int *value)
+{
+	int input = 0;
+	int x = 0;
+	while (!input)
+	{
+		printf("%c", name);
+		printf(" = ");
+		char nextSymbol = '0';
+		if ((scanf_s("%d%c", &*value, &nextSymbol) == 2) && (*value > 0) && (isspace(nextSymbol)))
+		{
+			input = 1;
+		}
+		else
+		{
+			if (nextSymbol != '\n')
+			{
+				while (getchar() != '\n');
+			}
+			printf("You entered an incorrect expression. Please, enter natural number\n");
+		}
+	}
+}
+
 int main()
 {
 	printf("enter 3 natural numbers\n");
-	printf("x = ");
 	int x = 0;
-	scanf_s("%u", &x);
-	printf("y = ");
+	readNumber('x', &x);
 	int y = 0;
-	scanf_s("%u", &y);
-	printf("z = ");
+	readNumber('y', &y);
 	int z = 0;
-	scanf_s("%u", &z);
+	readNumber('z', &z);
 
 	if (pythagoreanTriple(x, y, z))
 	{
