@@ -3,7 +3,6 @@
 
 #include "stdafx.h"
 #include < math.h > 
-#include <ctype.h>
 
 
 int pythagoreanTriple(int x, int y, int z)
