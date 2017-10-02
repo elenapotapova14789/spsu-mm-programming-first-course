@@ -60,7 +60,6 @@ int primitivePythagoreanTriple(int x, int y, int z)
 int readNumber(char name, int *value)
 {
 	int input = 0;
-	int x = 0;
 	while (!input)
 	{
 		printf("%c", name);
