@@ -1,8 +1,8 @@
 // Task2.cpp : Defines the entry point for the console application.
 //
 
-#include "stdafx.h"
 #include < math.h > 
+#include <stdio.h>
 
 
 int pythagoreanTriple(int x, int y, int z)
