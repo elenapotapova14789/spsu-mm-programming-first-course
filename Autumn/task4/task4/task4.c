@@ -8,7 +8,7 @@
 int primeNumber(int number)
 {
 	int i = 2;
-	while (i < number / 2)
+	while (i <= sqrt(number))
 	{
 		if (number % i == 0)
 		{
