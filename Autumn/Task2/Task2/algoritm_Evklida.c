@@ -1,4 +1,4 @@
-int NODNumbers(int x, int y)
+int nodNumbers(int x, int y)
 {
 	int nominator = 0;
 	int denominator = 0;
@@ -14,7 +14,7 @@ int NODNumbers(int x, int y)
 	}
 	if (nominator % denominator != 0)
 	{ 
-		return NODNumbers(denominator, nominator % denominator);
+		return nodNumbers(denominator, nominator % denominator);
 	}
 	else
 	{
