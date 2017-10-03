@@ -1,7 +1,41 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include "stdio.h"
+#include "stdlib.h"
 #include "math.h"
 
 const double Pi = 3.14159265358979323846;
+
+char inputString(char* s);
+
+void doubleNumb(double* x, char c, char* s, int* n)
+{
+	switch (c)
+	{
+		case 'e':
+		{
+			printf("You entered incorrect number!\nPlease enter number again.\n");
+			break;
+		}
+		case 's':
+		{
+			printf("You entered negative number!\nPlease enter number again.\n");
+			break;
+		}
+		case 'f':
+		{
+			*x = atof(s);
+			*n += 1;
+			break;
+		}
+		case 'u':
+		{
+			*x = (double)atoi(s);
+			*n += 1;
+			break;
+		}
+	}
+}
 
 int testTriangleInequality(double x, double y, double z)
 {
@@ -26,20 +60,36 @@ int main()
 	x = 0;
 	y = 0;
 	z = 0;
-	printf("Please enter 3 numbers :\n");
-	printf("x = ");
-	scanf_s("%lf", &x);
-	printf("y = ");
-	scanf_s("%lf", &y);
-	printf("z = ");
-	scanf_s("%lf", &z);
+	int n = 0;
+	printf("Please enter 3 positive numbers :\n");
+	while (n == 0)
+	{
+		printf("X = ");
+		char s[20];
+		scanf("%19s", &s);
+		doubleNumb(&x, inputString(s), s, &n);
+	}
+	while (n == 1)
+	{
+		printf("Y = ");
+		char s[20];
+		scanf("%19s", &s);
+		doubleNumb(&y, inputString(s), s, &n);
+	}
+	while (n == 2)
+	{
+		printf("Z = ");
+		char s[20];
+		scanf("%19s", &s);
+		doubleNumb(&z, inputString(s), s, &n);
+	}
 	if ((x > 0) && (y > 0) && (z > 0))
 	{
 		if (   (testTriangleInequality(x, y, z)) 
 			&& (testTriangleInequality(y, x, z))
-			&& (testTriangleInequality(z, x, y))   )
+			&& (testTriangleInequality(z, x, y)))
 		{
-			printf("You can make a neural triangle\n");
+			printf("You can make a nondegenerate triangle\n");
 			int angleX, angleY, angleZ;
 			angleX = (int)(acos(findCosA(x, y, z)) * 180 * 60 * 60 / Pi);
 			angleY = (int)(acos(findCosA(y, x, z)) * 180 * 60 * 60 / Pi);
@@ -50,12 +100,12 @@ int main()
 		}
 		else
 		{
-			printf("You can not make a neural triangle\n");
+			printf("You can not make a nondegenerate triangle\n");
 		}
 	}
 	else
 	{
-		printf("You can not make a neural triangle\n");
+		printf("You can not make a nondegenerate triangle\n");
 	}
 
 	return 0;

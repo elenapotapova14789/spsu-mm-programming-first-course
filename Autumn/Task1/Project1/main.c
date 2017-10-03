@@ -1,12 +1,63 @@
 #include "stdio.h"
 
-void printTransformationInBinaryCode(int composition)
+
+void printTransformationInBinaryCodeWithoutOne(int number)
 {
-	if (composition / 2 > 0)
+	if (number / 2 > 0)
 	{
-		printTransformationInBinaryCode(composition / 2);
+		printTransformationInBinaryCodeWithoutOne(number / 2);
+		printf("%i", number % 2);
 	}
-	printf("%i", composition % 2);
+}
+
+void printTransformationInBinaryCode(int number)
+{
+	if (number / 2 > 0)
+	{
+		printTransformationInBinaryCode(number / 2);
+	}
+	printf("%i", number % 2);
+}
+
+void printTransformationInInvertBinaryCode(int composition, int n)
+{
+	if (composition % 2 == 1)
+	{
+		if (composition / 2 > 0)
+		{
+			printTransformationInInvertBinaryCode(composition / 2, n + 1);
+		}
+	}
+	else
+	{ 
+		if (composition / 2 > 0)
+		{
+			printTransformationInInvertBinaryCode(composition / 2, n);
+		}
+	}
+	if (n == 0)
+	{ 
+			if (composition % 2 == 1)
+			{
+				printf("1");
+			}
+			else
+			{
+				printf("0");
+			}
+	}
+	else
+	{
+		if (composition % 2 == 0)
+		{
+			printf("1");
+		}
+		else
+		{
+			printf("0");
+		}
+	}
+
 }
 
 int lengthBinaryCode(int composition)
@@ -33,10 +84,23 @@ int main()
 	printf("A) 1");
 	for (int i = 0; i < 31 - lengthCode; i++)
 	{
+		printf("1");
+	}
+	int n = 0;
+	printTransformationInInvertBinaryCode(fullNameCompositon, n);
+	printf("\nB) 0");
+	printTransformationInBinaryCode(127 + lengthBinaryCode(fullNameCompositon) - 1);
+	printTransformationInBinaryCodeWithoutOne(fullNameCompositon);
+	for (int i = 0; i < 23 - lengthBinaryCode(fullNameCompositon) + 1; i++)
+	{
 		printf("0");
 	}
-	printTransformationInBinaryCode(fullNameCompositon);
-	printf("\nB) 01000011101101000000000000000000");
-	printf("\nC) 1100000001110110100000000000000000000000000000000000000000000000\n");
+	printf("\nC) 1");
+	printTransformationInBinaryCode(1023 + lengthBinaryCode(fullNameCompositon) - 1);
+	printTransformationInBinaryCodeWithoutOne(fullNameCompositon);
+	for (int i = 0; i < 52 - lengthBinaryCode(fullNameCompositon) + 1; i++)
+	{
+		printf("0");
+	}
 	return 0;
 }

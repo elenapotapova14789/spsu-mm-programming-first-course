@@ -5,6 +5,8 @@
 
 int nodNumbers(int x, int y);
 
+char inputString(char* s);
+
 void naturalNumb(int* x, char c, char* s, int* naturalNumber)
 {
 	switch (c)
