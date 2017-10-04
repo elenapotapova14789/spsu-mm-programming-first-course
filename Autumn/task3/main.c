@@ -2,7 +2,7 @@
 #include <math.h>
 
 
-double readinput()
+double readInput()
 {
     printf("Please, enter a number: ");
     while (1)
@@ -60,9 +60,9 @@ void stats(double a, double b, double c)
 int main()
 {
     printf("Checks input values can form a triangle.\n");
-    double a = readinput();
-    double b = readinput();
-    double c = readinput();
+    double a = readInput();
+    double b = readInput();
+    double c = readInput();
     if (a + b > c &&
         a + c > b &&
         b + c > a)
