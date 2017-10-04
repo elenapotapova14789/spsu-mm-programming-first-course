@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int is_prime(long long x)
+int isPrime(long long x)
 {
     for (int i = 2; i < sqrt(x) + 1; i++) {
         if (x % i == 0)
@@ -19,7 +19,7 @@ int main()
     for (int i = 0; i < 31; i++)
     {
         src *= 2;
-        if (is_prime(src - 1))
+        if (isPrime(src - 1))
         {
             printf("%lli\n", src - 1);
         }
