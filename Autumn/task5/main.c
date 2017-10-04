@@ -13,7 +13,7 @@ int sqr(int x)
     return x * x;
 }
 
-int readinput()
+int readInput()
 {
     printf("Please, enter a number: ");
     while (1)
@@ -49,7 +49,7 @@ int readinput()
 int main()
 {
     printf("Prints continued fraction representing square root of entered non-square number.\n");
-    int n = readinput();
+    int n = readInput();
     int m = (int) sqrt(n); // We are looking forward to get x[i] = sqrt(n) + m
     printf("[%d; ", m);
     // Now sqrt(n) = m + 1/x
