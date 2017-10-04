@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 
-int readinput()
+int readInput()
 {
     printf("Please, enter a number: ");
     while (1)
@@ -41,7 +41,7 @@ int isPythagorean(long long x, long long y, long long z)
 }
 
 /// Calculate gcd using Euclid's algorithm.
-int GCD(int x, int y)
+int gcd(int x, int y)
 {
     if (x == 0 || y == 0)
     {
@@ -64,13 +64,13 @@ int GCD(int x, int y)
 int main()
 {
     printf("Checks if entered numbers are Pythagorean triple.\n");
-    int x = readinput();
-    int y = readinput();
-    int z = readinput();
+    int x = readInput();
+    int y = readInput();
+    int z = readInput();
     if (isPythagorean(x, y, z))
     {
         printf("This is a Pythagorean triple.\n");
-        if (GCD(GCD(x, y), z) == 1)
+        if (gcd(gcd(x, y), z) == 1)
         {
             printf("Numbers are coprime.\n");
         }
