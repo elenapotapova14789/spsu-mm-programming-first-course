@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <malloc.h>
+#include <string.h>
 
 char* name1 = "Kirill";
 char* name2 = "Glazyrin";
 char* name3 = "Maximovich";
 
-int is_little_endian()
+int isLittleEndian()
 {
     int value = 1;
     int *x = &value;
@@ -13,7 +14,7 @@ int is_little_endian()
     return (int) *y;
 }
 
-void print_bits(int length, int *bits)
+void printBits(int length, int *bits)
 {
     for (int i = length - 1; i >= 0; i--)
     {
@@ -25,7 +26,7 @@ void print_bits(int length, int *bits)
     }
 }
 
-void int_binary(int x)
+void binaryInt(int x)
 {
     int mem[sizeof(x) * 8];
     int bit = 1;
@@ -34,10 +35,10 @@ void int_binary(int x)
         mem[i] = (x & bit) == 0? 0: 1;
         bit = bit << 1;
     }
-    print_bits(sizeof(x) * 8, mem);
+    printBits(sizeof(x) * 8, mem);
 }
 
-void long_long_binary(long long x)
+void binaryLongLong(long long x)
 {
     int mem[sizeof(x) * 8];
     long long bit = 1;
@@ -46,52 +47,26 @@ void long_long_binary(long long x)
         mem[i] = (x & bit) == 0? 0: 1;
         bit = bit << 1;
     }
-    print_bits(sizeof(x) * 8, mem);
+    printBits(sizeof(x) * 8, mem);
 }
 
 // This case is a terrible one!
 // It has to be dealt with separately.
-void double_binary_x86(double *x)
+void binaryDoubleX86(double *x)
 {
     long long *ptr = (long long*) x;
-    if (is_little_endian())
+    if (isLittleEndian())
     {
-        long_long_binary(*(ptr + 1));
+        binaryLongLong(*(ptr + 1));
         printf(" ");
-        long_long_binary(*ptr);
+        binaryLongLong(*ptr);
     }
     else
     {
-        long_long_binary(*ptr);
+        binaryLongLong(*ptr);
         printf(" ");
-        long_long_binary(*(ptr + 1));
+        binaryLongLong(*(ptr + 1));
     }
-
-}
-
-// Unused.
-void double_binary_x64(double *x)
-{
-    int *ptr = (int*) x;
-    if (is_little_endian())
-    {
-        int_binary(*(ptr + 1));
-        printf(" ");
-        int_binary(*ptr);
-    }
-    else
-    {
-        int_binary(*ptr);
-        printf(" ");
-        int_binary(*(ptr + 1));
-    }
-}
-
-int len(char const *string)
-{
-    int result = 0;
-    for (; string[result] != '\0'; result++);
-    return result;
 }
 
 int main()
@@ -106,23 +81,23 @@ int main()
         case 2:
         {
             // x86
-            long long x = - len(name1) * len(name2) * len(name3);
+            long long x = - strlen(name1) * strlen(name2) * strlen(name3);
             printf("32-bit negative integer:\n%lli = \n", x);
-            long_long_binary(x);
+            binaryLongLong(x);
             printf("\n");
 
             float *y = malloc(sizeof(float));
-            *y = len(name1) * len(name2) * len(name3);
+            *y = strlen(name1) * strlen(name2) * strlen(name3);
             printf("Positive single-precision floating-point number:\n%f = \n", *y);
             long long *ptr = (long long*) y;
-            long_long_binary(*ptr);
+            binaryLongLong(*ptr);
             printf("\n");
             free(y);
 
             double *z = malloc(sizeof(double));
-            *z = - len(name1) * len(name2) * len(name3);
+            *z = - strlen(name1) * strlen(name2) * strlen(name3);
             printf("Negative double-precision floating-point number:\n%lf = \n", *z);
-            double_binary_x86(z);
+            binaryDoubleX86(z);
             printf("\n");
             free(z);
 
@@ -131,24 +106,24 @@ int main()
         case 4:
         {
             // x32, x64
-            int x = - len(name1) * len(name2) * len(name3);
+            int x = - strlen(name1) * strlen(name2) * strlen(name3);
             printf("32-bit negative integer:\n%d = \n", x);
-            int_binary(x);
+            binaryInt(x);
             printf("\n");
 
             float *y = malloc(sizeof(float));
-            *y = len(name1) * len(name2) * len(name3);
+            *y = strlen(name1) * strlen(name2) * strlen(name3);
             printf("Positive single-precision floating-point number:\n%f = \n", *y);
             int *ptry = (int*) y;
-            int_binary(*ptry);
+            binaryInt(*ptry);
             printf("\n");
             free(y);
 
             double *z = malloc(sizeof(double));
-            *z = - len(name1) * len(name2) * len(name3);
+            *z = - strlen(name1) * strlen(name2) * strlen(name3);
             printf("Negative double-precision floating-point number:\n%lf = \n", *z);
             long long *ptrz = (long long*) z;
-            long_long_binary(*ptrz);
+            binaryLongLong(*ptrz);
             printf("\n");
             free(z);
 
