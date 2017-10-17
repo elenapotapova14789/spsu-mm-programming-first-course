@@ -63,6 +63,7 @@ int readNumber(char name, int *value)
 	{
 		printf("%c", name);
 		printf(" = ");
+		
 		char nextSymbol = '0';
 		if ((scanf_s("%d%c", &*value, &nextSymbol) == 2) && (*value > 0) && (isspace(nextSymbol)))
 		{
