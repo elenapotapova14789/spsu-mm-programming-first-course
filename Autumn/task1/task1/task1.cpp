@@ -89,7 +89,7 @@ int main()
 	binaryCodeInt(lengthOfBinaryCode(binaryArray, lengthOfInt) - 1 + 1023, exponent);
 	printArray(exponent, lengthOfInt, lengthOfInt - 11, lengthOfInt - 1);
 	int binaryArrayLong[sizeof(long long) * 8];
-	binaryCodeLong(-composition, binaryArrayLong);
+	binaryCodeLong(composition, binaryArrayLong);
 	printArray(binaryArrayLong, lengthOfLong, lengthOfLong - 52, lengthOfLong - 1);
 	putchar('\n');
 	
