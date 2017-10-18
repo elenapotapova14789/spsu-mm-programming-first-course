@@ -23,21 +23,25 @@ void binary(unsigned long long int num, int k, int max) //recursively prints the
 
 int main() {
 
-    float a = fio;
-    unsigned int *b = (unsigned int*) &a;
-    double c = -fio;
-    unsigned long long int *d = (unsigned long long int*) &c;
-    int e = -fio;
-    unsigned int *f = (unsigned int*) &e;
+    float temp1 = fio;
+    unsigned int *second = (unsigned int*) &temp1;
 
-    printf("%s\n%s\n", "Name: Oleg Nickolaevich Chernyavsky", "Composition of the lengths: 12*4*11 = 528");
+    double temp2 = -fio;
+    unsigned long long int *third = (unsigned long long int*) &temp2;
 
-    printf("%s", "Answer for the first task:  ");
-    binary(*f, 0, 32);
+    int temp3 = -fio;
+    unsigned int *first = (unsigned int*) &temp3;
+
+    printf("%s\n%s", "Name: Oleg Nickolaevich Chernyavsky", "Composition of the lengths: 12*4*11 = 528");
+
+    printf("\n%s", "Answer for the first task:  ");
+    binary(*first, 0, 32);
+
     printf("\n%s", "Answer for the second task: ");
-    binary(*b, 0, 32);
+    binary(*second, 0, 32);
+
     printf("\n%s", "Answer for the third task:  ");
-    binary(*d, 0, 64);
+    binary(*third, 0, 64);
 
     return 0;
 }
