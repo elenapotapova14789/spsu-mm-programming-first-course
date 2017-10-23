@@ -2,6 +2,8 @@
 #include<string.h>
 #include<stdlib.h>
 
+// checks if you entered number
+
 int inp(char *s)
 {
     int i, k = 0;
@@ -25,6 +27,8 @@ int gcd(int a,int b)
          b %= a;
   return a | b;
 }
+
+// these 2 functions order a, b, c: a>b>c to make it easier to check whether it is a Pifagorean triple or not
 
 void order2(int * a, int * b)
 {
