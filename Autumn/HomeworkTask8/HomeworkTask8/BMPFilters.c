@@ -71,7 +71,7 @@ int main()
 			printf("Wrong info header size!\n");
 			continue;
 		}
-
+		printf("%d", bmInfoHeader.biSizeImage);
 		fseek(sourceFile, bmFileHeader.bfOffBits, SEEK_SET);
 
 		image = (unsigned char*)malloc(bmInfoHeader.biSizeImage);
@@ -104,7 +104,7 @@ int main()
 				free(pathtarget);
 			}
 
-			printf("Choose filter:\n0 = Average3x3 (default)\n1 = Gaussian3x3\n2 = Sobel X\n3 = Sobel Y\n4 = GreyScale\n");
+			/*printf("Choose filter:\n0 = Average3x3 (default)\n1 = Gaussian3x3\n2 = Sobel X\n3 = Sobel Y\n4 = GreyScale\n");
 			scanf("%d", &filter);
 
 			switch (filter)
@@ -124,58 +124,17 @@ int main()
 			default: // avg3x3
 
 				break;
-			}
+			}*/
 
 			// writing to file
-			unsigned char bmpfileheader[14] = 
-			{ 
-				'B', 'M', 
-				0, 0, 0, 0,
-				0, 0, 
-				0, 0, 
-				54, 0, 0, 0 
-			};
-			unsigned char bmpinfoheader[40] = 
-			{ 
-				40, 0, 0, 0, 
-				0, 0, 0, 0, 
-				0, 0, 0, 0, 
-				1, 0, 
-				24, 0,
-				0, 0, 0, 0,
-				0, 0, 0, 0,
-				0x13, 0x0B, 0, 0,
-				0x13, 0x0B, 0, 0,
-				0, 0, 0, 0
-			};
 			unsigned char pad[3] = { 0, 0, 0 };
 
 			int padSize = (4 - (width * 3) % 4) % 4;
-			int sizeData = width * height * 3 + height * padSize;
-			int fileSize = sizeData + sizeof(targetFile) + sizeof(bmpinfoheader);
 
-			bmpfileheader[2] = (unsigned char)(fileSize);
-			bmpfileheader[3] = (unsigned char)(fileSize >> 8);
-			bmpfileheader[4] = (unsigned char)(fileSize >> 16);
-			bmpfileheader[5] = (unsigned char)(fileSize >> 24);
+			fwrite(&bmFileHeader, 1, 14, targetFile);
+			fwrite(&bmInfoHeader, 1, 40, targetFile);
 
-			bmpinfoheader[4] = (unsigned char)(width);
-			bmpinfoheader[5] = (unsigned char)(width >> 8);
-			bmpinfoheader[6] = (unsigned char)(width >> 16);
-			bmpinfoheader[7] = (unsigned char)(width >> 24);
-
-			bmpinfoheader[8] = (unsigned char)(height);
-			bmpinfoheader[9] = (unsigned char)(height >> 8);
-			bmpinfoheader[10] = (unsigned char)(height >> 16);
-			bmpinfoheader[11] = (unsigned char)(height >> 24);
-
-			bmpinfoheader[20] = (unsigned char)(sizeData);
-			bmpinfoheader[21] = (unsigned char)(sizeData >> 8);
-			bmpinfoheader[22] = (unsigned char)(sizeData >> 16);
-			bmpinfoheader[23] = (unsigned char)(sizeData >> 24);
-
-			fwrite(bmpfileheader, 1, 14, targetFile);
-			fwrite(bmpinfoheader, 1, 40, targetFile);
+			fseek(targetFile, bmFileHeader.bfOffBits, SEEK_SET);
 
 			for (int y = 0; y < height; y++)
 			{
@@ -189,12 +148,9 @@ int main()
 					Clamp(&g);
 					Clamp(&b);
 
-					unsigned char pixel[3];
-					pixel[0] = b;
-					pixel[1] = g;
-					pixel[2] = r;
-
-					fwrite((char*)pixel, 1, 3, targetFile);
+					fwrite(&b, 1, 1, targetFile);
+					fwrite(&g, 1, 1, targetFile);
+					fwrite(&r, 1, 1, targetFile);
 				}
 				fwrite((char*)pad, padSize, 1, targetFile);
 			}
