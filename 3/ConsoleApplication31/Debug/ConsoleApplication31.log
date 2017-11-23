@@ -1,0 +1,3 @@
+﻿  ConsoleApplication31.cpp
+c:\users\елена\source\repos\consoleapplication31\consoleapplication31\consoleapplication31.cpp(20): warning C4013: angle: нет определения; предполагается "extern" с возвратом типа "int"
+  ConsoleApplication31.vcxproj -> c:\users\елена\source\repos\ConsoleApplication31\Debug\ConsoleApplication31.exe

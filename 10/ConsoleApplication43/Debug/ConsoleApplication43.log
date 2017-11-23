@@ -1,0 +1,8 @@
+﻿  ConsoleApplication43.cpp
+c:\users\елена\source\repos\consoleapplication43\consoleapplication43\consoleapplication43.cpp(19): warning C4013: isspace: нет определения; предполагается "extern" с возвратом типа "int"
+c:\users\елена\source\repos\consoleapplication43\consoleapplication43\consoleapplication43.cpp(19): warning C4473: "scanf_s": передано недостаточно аргументов для строки формата
+  c:\users\елена\source\repos\consoleapplication43\consoleapplication43\consoleapplication43.cpp(19): note: заполнители и их параметры ожидают переменное число аргументов в количестве 3, но было предоставлено 2
+  c:\users\елена\source\repos\consoleapplication43\consoleapplication43\consoleapplication43.cpp(19): note: отсутствующий вариативный аргумент "3" требуется для строки форматирования "%c"
+  c:\users\елена\source\repos\consoleapplication43\consoleapplication43\consoleapplication43.cpp(19): note: этот аргумент используется в качестве размера буфера
+c:\users\елена\source\repos\consoleapplication43\consoleapplication43\consoleapplication43.cpp(37): warning C4013: get: нет определения; предполагается "extern" с возвратом типа "int"
+  ConsoleApplication43.vcxproj -> C:\Users\ЕЛЕНА\source\repos\ConsoleApplication43\Debug\ConsoleApplication43.exe
